@@ -1,7 +1,7 @@
 \documentclass[10pt]{article}
  
 \usepackage[margin=1in]{geometry} 
-\usepackage{mathtools, amsthm, amssymb, graphicx, multicol, array, siunitx, amsmath, esint, bm, savesym, physics}
+\usepackage{mathtools, amsthm, amssymb, graphicx, multicol, array, siunitx, amsmath, esint, bm, savesym, physics, stackrel}
 \usepackage{tikz}
 \usepackage{mathdots}
 \usepackage{yhmath}
@@ -36,6 +36,9 @@
 \def\rcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{ScriptR.pdf}}$}}} %griffith separation vector distance
 \def\brcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{BoldR.pdf}}$}}} %griffith separation vector 
 \def\hrcurs{{\mbox{$\hat \brcurs$}}} %griffith unit separation vector 
+
+%use this command when showing elementary row operations
+%\stackrel[-5R_1 + 2R_2 \to R_2']{3R_1 + 2R_3 \to R_3'}{\xrightarrow{\hspace*{2cm}}}
 
 \pagestyle{fancy}
 \fancyhf{}
