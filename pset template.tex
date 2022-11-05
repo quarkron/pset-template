@@ -1,36 +1,73 @@
-\documentclass[10pt]{article}
- 
-\usepackage[margin=1in]{geometry} 
-\usepackage{mathtools, amsthm, amssymb, graphicx, multicol, array, siunitx, amsmath, esint, bm, savesym, physics, stackrel}
-\usepackage{tikz}
-\usepackage{mathdots}
-\usepackage{yhmath}
-\usepackage{cancel}
-\usepackage{color}
+\documentclass[12pt]{article}
+\usepackage[dvips,letterpaper,margin=1in,bottom=0.7in]{geometry} 
+\usepackage{amsmath} % AMS Math Package
+\usepackage{amsthm} % Theorem Formatting
+\usepackage{amssymb}    % Math symbols such as \mathbb
+\usepackage{graphicx, tikz} % Allows for eps, tikz images 
+\usepackage{enumerate}
 \usepackage{array}
-\usepackage{multirow}
-\usepackage{gensymb}
-\usepackage{tabularx}
-\usepackage{extarrows}
-\usepackage{booktabs}
-\usepackage{empheq}
-\usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{fancyhdr}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{float}
+
+% Allows for importation of mathcha.io tikz code
 \usetikzlibrary{fadings}
 \usetikzlibrary{patterns}
 \usetikzlibrary{shadows.blur}
 \usetikzlibrary{shapes}
 
-\setlength{\parindent}{0pt}
+% For figures
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
 
-\renewcommand{\headrulewidth}{2pt}
-\renewcommand{\footrulewidth}{0pt}
+% Basic page formatting
+\usepackage{fancyhdr}
 
+% Define colored boxes for problem statements
+\usepackage[many]{tcolorbox}
 
+% Define any color you want
+% \definecolor{myblue}{RGB}{0,163,243}
+
+% Just replace gray with predefined color name if you wish
+%-----------------------------------------------------------%
+\tcbset{mystyle/.style={
+  breakable,
+  enhanced,
+  outer arc=0pt,
+  arc=0pt,
+  colframe=gray,
+  colback=gray!20,
+  attach boxed title to top left,
+  boxed title style={
+    colback=gray,
+    outer arc=0pt,
+    arc=0pt,
+    },
+  title=Problem~\thetcbcounter,
+  fonttitle=\rmfamily
+  }
+}
+
+\newtcolorbox[auto counter]{problem}[1]{
+  mystyle,
+  title=Problem~\thetcbcounter
+  }
+%---------------------------------------------------------%
+
+% Predefine solution environment
+\newenvironment{solution}{%\small%
+        \begin{trivlist} \item \textbf{Solution}. }{%
+            \hspace*{\fill} $\blacksquare$\end{trivlist}}%
+
+%Basic page formatting
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Subject}
+\lhead{\textbf{Last Name, First Name, M.I.}}
+\chead{PS no.}
+\rfoot{\thepage}
+%---------------------------------------------------------%
+
+% Pertinent electrodynamics vectors
 \newcommand{\uvec}[1]{\boldsymbol{\hat{#1}}} %unit boldface vectors
 \newcommand{\bvec}[1]{\boldsymbol{#1}} %boldface vectors
 \def\rcurs{{\mbox{$\resizebox{.09in}{.08in}{\includegraphics[trim= 1em 0 14em 0,clip]{ScriptR.pdf}}$}}} %griffith separation vector distance
@@ -40,27 +77,21 @@
 %use this command when showing elementary row operations
 %\stackrel[-5R_1 + 2R_2 \to R_2']{3R_1 + 2R_3 \to R_3'}{\xrightarrow{\hspace*{2cm}}}
 
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{Subject}
-\lhead{\textbf{Name}}
-\chead{Problem Set No.}
-\rfoot{\thepage}
+%Note: Always add an escape character \ after problem environment. 
+
 \begin{document}
+\begin{problem} 
+    \ Insert Problem 1 statement here 
+\end{problem}
+\begin{solution}
+    Solution here.
+\end{solution}
 
-    \begin{enumerate}
-        \item[\textbf{1}]
-        \vspace{0.3cm}
-
-        \item[\textbf{2}]
-        \vspace{0.3cm}
-        
-        \item[\textbf{3}]
-        \vspace{0.3cm}
-        
-        \item[\textbf{3}]
-        \vspace{0.3cm}
-        
-    \end{enumerate}
+\begin{problem} 
+    \ Insert Problem 2 statement here 
+\end{problem}
+\begin{solution}
+    Solution here.
+\end{solution}
 
 \end{document}
